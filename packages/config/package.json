@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "@client/config",
+  "version": "0.0.0",
+  "files": [
+    "babel.config.js",
+    "babel.config.web.js",
+    "eslint.config.js",
+    "tsconfig.json",
+    "tsconfig.web.json"
+  ],
+  "scripts": {
+    "lint": "eslint --ext js,ts,tsx ."
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^8.25.0",
+    "eslint-config-universe": "^11.1.0",
+    "prettier": "^2.7.1"
+  },
+  "eslintConfig": {
+    "extends": "."
+  }
+}

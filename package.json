@@ -1,0 +1,42 @@
+{
+  "name": "xam-client-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/**",
+    "packages/**"
+  ],
+  "scripts": {
+    "lint": "turbo lint",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "dev": "turbo run dev --parallel"
+  },
+  "devDependencies": {
+    "turbo": "1.6.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@babel/*",
+        "expo-modules-*",
+        "typescript",
+        "react-test-renderer",
+        "@tanstack/query-core",
+        "react-is"
+      ]
+    }
+  },
+  "packageManager": "pnpm@7.14.0",
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "bracketSameLine": true,
+    "trailingComma": "es5"
+  }
+}
