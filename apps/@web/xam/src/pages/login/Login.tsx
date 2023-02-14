@@ -2,8 +2,7 @@
 
 import { Link } from 'react-router-dom';
 
-import { LoginForm } from '@components/auth';
-
+import { LoginForm } from '../../components/auth';
 import * as S from './Login.styled';
 
 export function Login() {
