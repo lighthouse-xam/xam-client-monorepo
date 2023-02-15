@@ -18,7 +18,9 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-router-dom": "^6.8.1"
+  },
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [

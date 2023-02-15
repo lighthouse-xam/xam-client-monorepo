@@ -2,13 +2,20 @@ import { css } from '@emotion/react';
 
 export const formLayout = css`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 100%;
+  flex-direction: column;
+  border: solid 1px black;
+  padding: 20px;
+  height: 100%;
+  width: 60%;
 `;
 
-export const buttonStyle = css`
-  background-color: blueviolet;
-  color: white;
-  width: 61%;
+export const formInput = css`
+  height: '20px';
+  border: 'none';
+  background-color: '#EEE8AA';
+`;
+
+export const JoinButton = css`
+  margin-top: '10px';
 `;

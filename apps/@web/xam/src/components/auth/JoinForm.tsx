@@ -2,56 +2,109 @@
 
 import { Button } from 'antd';
 import { useState } from 'react';
-// import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
-import * as S from './JoinForm.styled';
-
+const primary_color = '#FF8C00';
 export function JoinForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passcheck, setPasscheck] = useState('');
+
   const onEmail = (event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value);
   const onPassword = (event: React.ChangeEvent<HTMLInputElement>) =>
     setPassword(event.target.value);
+  const onPasscheck = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setPasscheck(event.target.value);
 
-  // const navigate = useNavigate();
-  // const join = usePostJoin();
-
+  const navigate = useNavigate();
   const onSubmit = () => {
-    // join.mutate(
-    //   { email, password },
-    //   {
-    //     onError: () => {
-    //       if (email === "") alert("이메일을 입력하세요");
-    //       else alert("비밀번호를 입력하세요");
-    //     },
-    //     onSuccess: () => {
-    //       alert("회원가입 성공");
-    //       navigate("/login");
-    //     },
-    //   }
-    // );
+    const test = 'test@naver.com';
+    if (test == email) {
+      alert('이미 존재하는 회원 이메일입니다');
+    } else {
+      navigate('/login');
+    }
+  };
+  const onCheck = () => {
+    //비밀번호 확인
+    if (password == passcheck) {
+      return 0;
+    } else {
+      alert('비밀번호를 다시 확인해주세요.');
+    }
   };
 
   return (
-    <div css={S.formLayout}>
-      <input
-        style={{ width: '60%' }}
-        onChange={onEmail}
-        value={email}
-        type="text"
-        placeholder="이메일 주소"
-      />
-      <input
-        style={{ width: '60%' }}
-        onChange={onPassword}
-        value={password}
-        type="text"
-        placeholder="비밀번호"
-      />
+    <div style={{ width: '100%', height: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <>
+          <div
+            style={{
+              display: 'flex',
+              width: '40%',
+              height: '100%',
+              color: primary_color,
+              alignItems: 'center',
+              flexDirection: 'column',
+            }}>
+            <h1 style={{ color: primary_color, alignContent: 'center' }}>Xam!</h1>
+            <div style={{ height: '40px' }}></div>
+            <div
+              style={{
+                display: 'flex',
+                color: primary_color,
+                flexDirection: 'column',
+                alignContent: 'center',
+                padding: '30px',
+              }}>
+              <h2 style={{ color: primary_color }}>Create Account</h2>
+              <div style={{ color: 'gray', paddingBottom: '5px' }}>Email*</div>
+              <input
+                style={{
+                  height: '20px',
+                  border: 'none',
+                  backgroundColor: '#EEE8AA',
+                }}
+                onChange={onEmail}
+                value={email}
+                type="text"
+              />
+              <div style={{ color: 'gray', paddingBottom: '5px' }}>Password*</div>
+              <input
+                style={{ height: '20px', border: 'none', backgroundColor: '#EEE8AA' }}
+                onChange={onPassword}
+                value={password}
+                type="text"
+              />
+              <div style={{ color: 'gray', paddingBottom: '5px' }}>Password Check*</div>
+              <input
+                style={{
+                  height: '20px',
+                  border: 'none',
+                  backgroundColor: '#EEE8AA',
+                }}
+                onChange={onPasscheck}
+                value={passcheck}
+                type="text"
+              />
+              <Button style={{ marginTop: '10px' }} onClick={onCheck}>
+                비밀번호 확인
+              </Button>
 
-      <Button css={S.buttonStyle} type="primary" block={true} onClick={onSubmit}>
-        가입
-      </Button>
+              <Button
+                style={{ marginTop: '10px', backgroundColor: '#8B4513' }}
+                type="primary"
+                block={true}
+                onClick={onSubmit}>
+                가입하기
+              </Button>
+            </div>
+          </div>
+        </>
+        <div style={{ margin: '70px', height: '100%', width: '90%' }}>
+          <div style={{ backgroundColor: '#FF8C00', height: '400px' }}></div>
+        </div>
+      </div>
     </div>
   );
 }
