@@ -6,7 +6,7 @@ import { useGlobalState } from '@hooks/queries';
 // import * as main from '@screens/main';
 
 export function Router() {
-  const [accessToken] = useGlobalState(['accessToken'], '');
+  // const [accessToken, setAccessToken] = useGlobalState(['accessToken'], '');
 
   const router = createBrowserRouter([
     // for auth

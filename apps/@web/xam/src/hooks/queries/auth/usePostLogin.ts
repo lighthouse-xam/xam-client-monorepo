@@ -9,11 +9,11 @@ export function usePostLogin() {
 
   const login = useMutation<PostLoginRes, Error, PostLoginReq>(
     ['postLogin'],
-    async ({ userName, password }) => await postLogin({ data: { password, userName } }),
+    async ({ id, password }) => await postLogin({ data: { password, id } }),
     {
-      async onSuccess({ result, token }) {
+      async onSuccess({ result, data }) {
         if (result) {
-          setAccessToken(token);
+          setAccessToken(data.accessToken);
         }
       },
     }

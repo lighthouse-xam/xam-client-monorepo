@@ -1,14 +1,17 @@
 import { createAPIService } from '@client/axios';
 
 export interface PostLoginReq {
-  userName: string;
+  id: string;
   password: string;
 }
 export interface PostLoginRes {
   result: boolean;
-  token: string;
+  data: {
+    refreshToken: string;
+    accessToken: string;
+  };
 }
 
 export const postLogin = createAPIService<PostLoginRes, PostLoginReq>()({
-  config: { method: 'POST', url: '/houscanner-service/auth/login' },
+  config: { method: 'POST', url: '/v3/auth/login' },
 });
