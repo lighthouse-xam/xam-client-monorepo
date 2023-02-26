@@ -1,23 +1,20 @@
 /** @jsxImportSource @emotion/react */
 
 import { Button } from 'antd';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { useInputForm } from '../../hooks/useInputForm';
+import * as S from './JoinForm.styled';
 
 const primary_color = '#FF8C00';
 export function JoinForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [passcheck, setPasscheck] = useState('');
-
-  const onEmail = (event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value);
-  const onPassword = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setPassword(event.target.value);
-  const onPasscheck = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setPasscheck(event.target.value);
+  const [email, setEmail] = useInputForm();
+  const [password, setPassword] = useInputForm();
+  const [passcheck, setPasscheck] = useInputForm();
 
   const navigate = useNavigate();
   const onSubmit = () => {
+    //존재하는 회원인지 확인
     const test = 'test@naver.com';
     if (test == email) {
       alert('이미 존재하는 회원 이메일입니다');
@@ -65,14 +62,14 @@ export function JoinForm() {
                   border: 'none',
                   backgroundColor: '#EEE8AA',
                 }}
-                onChange={onEmail}
+                onChange={setEmail}
                 value={email}
                 type="text"
               />
               <div style={{ color: 'gray', paddingBottom: '5px' }}>Password*</div>
               <input
                 style={{ height: '20px', border: 'none', backgroundColor: '#EEE8AA' }}
-                onChange={onPassword}
+                onChange={setPassword}
                 value={password}
                 type="text"
               />
@@ -83,7 +80,7 @@ export function JoinForm() {
                   border: 'none',
                   backgroundColor: '#EEE8AA',
                 }}
-                onChange={onPasscheck}
+                onChange={setPasscheck}
                 value={passcheck}
                 type="text"
               />
@@ -92,6 +89,7 @@ export function JoinForm() {
               </Button>
 
               <Button
+                css={S.JoinButton}
                 style={{ marginTop: '10px', backgroundColor: '#8B4513' }}
                 type="primary"
                 block={true}
