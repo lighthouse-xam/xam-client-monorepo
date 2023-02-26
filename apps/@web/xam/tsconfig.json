@@ -21,18 +21,13 @@
       "@helpers/*": ["src/helpers/*"],
       "@components/*": ["src/components/*"],
       "@screens/*": ["src/screens/*"],
-      "@navigation/*": ["src/navigation/*"],
-      "@contexts/*": ["src/contexts/*"],
       "@services/*": ["src/services/*"],
-      "@queryClient/*": ["src/queryClient/*"],
-      "@assets/*": ["src/assets/*"],
-      "@constants/*": ["src/constants/*"],
       "@styles/*": ["src/styles/*"],
+      "@assets/*": ["src/assets/*"],
 
-      "@fileManager": ["src/fileManager"],
+      "@router": ["src/router"],
       "@constants": ["src/constants"],
-      "@queryClient": ["src/queryClient"],
-      "@mmvk": ["src/mmvk"]
+      "@queryClient": ["src/queryClient"]
       // "@[FOLDER_NAME]": ["src/[FOLDER_NAME]"],
       // "@[FOLDER_NAME]/*": ["src/[FOLDER_NAME]/*"],
     }

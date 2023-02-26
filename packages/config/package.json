@@ -5,9 +5,7 @@
   "files": [
     "babel.config.js",
     "babel.config.web.js",
-    "eslint.config.js",
-    "tsconfig.json",
-    "tsconfig.web.json"
+    "eslint.config.js"
   ],
   "scripts": {
     "lint": "eslint --ext js,ts,tsx ."
