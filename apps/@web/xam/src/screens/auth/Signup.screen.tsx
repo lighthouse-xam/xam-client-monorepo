@@ -1,22 +1,18 @@
-import { Button, Form, Input } from 'antd';
+import { Input, Button, Form } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 import { Screen, Text, View } from '@components/common';
-import { useGlobalState } from '@hooks/queries';
 
-export function LoginScreen() {
+export function SignupScreen() {
   const navigate = useNavigate();
-  const [, setAccessToken] = useGlobalState(['accessToken'], '');
-
-  const onFinish = (values: any) => {
-    setAccessToken('token');
-    navigate('/');
+  const onFinish = () => {
+    navigate('./success');
   };
 
   return (
-    <Screen fullSize footer>
-      <Text fontWeight="bold" style={{ fontSize: 200, marginBottom: 32 }}>
-        잼
+    <Screen footer fullSize>
+      <Text fontStyle="h1" fontWeight="bold" style={{ marginBottom: 42 }}>
+        회원가입
       </Text>
 
       <View style={{ width: 360 }}>
@@ -31,9 +27,16 @@ export function LoginScreen() {
           <Form.Item
             label="비밀번호"
             name="password"
+            rules={[{ required: true, message: '비밀번호를 입력해주세요.' }]}>
+            <Input.Password placeholder="이메일을 입력해주세요." />
+          </Form.Item>
+
+          <Form.Item
+            label="비밀번호 확인"
+            name="rePassword"
             rules={[{ required: true, message: '비밀번호를 입력해주세요.' }]}
             style={{ marginBottom: 48 }}>
-            <Input.Password placeholder="이메일을 입력해주세요." />
+            <Input.Password placeholder="비밀번호 입력해주세요." />
           </Form.Item>
 
           <Form.Item>
@@ -43,7 +46,7 @@ export function LoginScreen() {
                 type="primary"
                 htmlType="submit"
                 style={{ fontWeight: 'bold', width: 255 }}>
-                로그인
+                회원가입
               </Button>
             </View>
           </Form.Item>

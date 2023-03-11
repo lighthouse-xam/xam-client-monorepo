@@ -16,7 +16,9 @@ const localStoragePersister = createSyncStoragePersister({
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ConfigProvider locale={koKR} theme={{ token: { colorPrimary: 'yellow' } }}>
+    <ConfigProvider
+      locale={koKR}
+      theme={{ token: { colorPrimary: '#EF933A', fontFamily: 'spoqa' } }}>
       <PersistQueryClientProvider
         client={queryClient}
         persistOptions={{

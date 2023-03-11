@@ -48,7 +48,7 @@ export function Text({
   ...props
 }: TextProps) {
   const textStyle = useMemo(() => {
-    return [{ fontSize: fontStyles[fontStyle] }, { fontFamily: fontWeights[fontWeight] }];
+    return [{ fontSize: fontStyles[fontStyle] }, { fontWeight: fontWeights[fontWeight] }];
   }, [fontStyle, fontWeight]);
 
   const normalizedChildren = useMemo(

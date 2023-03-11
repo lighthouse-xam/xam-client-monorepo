@@ -1,44 +1,19 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { Text, View } from '@components/common';
-import { useGlobalState } from '@hooks/queries';
-
-import { LoginScreen } from '../screens/index';
-// import * as auth from '@screens/auth';
-// import * as main from '@screens/main';
+import * as auth from '@screens/auth';
+import * as common from '@screens/common';
+import * as main from '@screens/main';
 
 export function Router() {
-  // const [accessToken, setAccessToken] = useGlobalState(['accessToken'], '');
-
   const router = createBrowserRouter([
-    // for auth
-    {
-      path: '/auth',
-      element: (
-        <View>
-          <Text>auth</Text>
-        </View>
-      ),
-    },
+    { path: '*', element: <common.NotFoundScreen /> },
+    { path: '/', element: <main.HomeScreen /> },
 
-    // for main
-    {
-      path: '/',
-      element: (
-        <View>
-          <Text>main</Text>
-        </View>
-      ),
-    },
+    { path: 'auth/login', element: <auth.LoginScreen /> },
 
-    {
-      path: '/login',
-      element: (
-        <View>
-          <LoginScreen />
-        </View>
-      ),
-    },
+    { path: 'auth/login', element: <auth.LoginScreen /> },
+    { path: 'auth/signup', element: <auth.SignupScreen /> },
+    { path: 'auth/signup/success', element: <auth.SignupSuccessScreen /> },
   ]);
 
   return <RouterProvider router={router} />;

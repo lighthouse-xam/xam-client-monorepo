@@ -1,32 +1,27 @@
 @font-face {
-  font-family: 'spoqaBold';
+  font-family: 'spoqa';
   src: url('../assets/fonts/SpoqaHanSansNeo-Bold.woff2');
   font-weight: 700;
-  font-style: normal;
 }
 @font-face {
-  font-family: 'spoqaLight';
+  font-family: 'spoqa';
   src: url('../assets/fonts/SpoqaHanSansNeo-Light.woff2');
   font-weight: 300;
-  font-style: normal;
 }
 @font-face {
-  font-family: 'spoqaMedium';
+  font-family: 'spoqa';
   src: url('../assets/fonts/SpoqaHanSansNeo-Medium.woff2');
   font-weight: 500;
-  font-style: normal;
 }
 @font-face {
-  font-family: 'spoqaRegular';
+  font-family: 'spoqa';
   src: url('../assets/fonts/SpoqaHanSansNeo-Regular.woff2');
   font-weight: 400;
-  font-style: normal;
 }
 @font-face {
-  font-family: 'spoqaThin';
+  font-family: 'spoqa';
   src: url('../assets/fonts/SpoqaHanSansNeo-Thin.woff2');
   font-weight: 250;
-  font-style: normal;
 }
 
 :root {
@@ -40,4 +35,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+html,
+body,
+#root {
+  height: 100%;
 }
